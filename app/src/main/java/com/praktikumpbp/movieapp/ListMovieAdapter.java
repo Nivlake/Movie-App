@@ -41,13 +41,22 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.List
 
         holder.tvMovieTitle.setText(movie.getTitle());
         holder.tvMovieDescription.setText(movie.getDescription());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(holder.itemView.getContext(),
-                        movie.getTitle(), Toast.LENGTH_SHORT).show();
-            }
+
+        //BARU itemView lamda
+        holder.itemView.setOnClickListener(view -> {
+            itemClickListener.onItemClick(listMovies.get(position));
+            Toast.makeText(holder.itemView.getContext(),
+                    movie.getTitle(), Toast.LENGTH_SHORT).show();
         });
+        //LAMA itemView tanpa lamda
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                itemClickListener.onItemClick(listMovies.get(position));
+//                Toast.makeText(holder.itemView.getContext(),
+//                        movie.getTitle(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
     @Override
