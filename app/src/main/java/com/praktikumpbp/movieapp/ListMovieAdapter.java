@@ -15,8 +15,8 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.ListViewHolder> {
-    private ArrayList<Movie> listMovies;
-    private ItemClickListener itemClickListener;
+    private final ArrayList<Movie> listMovies;
+    private final ItemClickListener itemClickListener;
 
     public ListMovieAdapter(ArrayList<Movie> list, ItemClickListener itemClickListener) {
         this.listMovies = list;

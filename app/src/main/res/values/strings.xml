@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Movie App</string>
+    <string name="app_name">UI App Design</string>
+    <string name="Genre">ANIME\nACTION SERIES</string>
+    <string name="Film_Name">Vivy Fluorite Eye\'s Song</string>
+    <string name="button1">START WATCHING</string>
+    <string name="button2">Download</string>
 </resources>

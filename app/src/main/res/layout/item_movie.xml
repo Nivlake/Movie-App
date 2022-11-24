@@ -27,6 +27,8 @@
             android:layout_marginStart="16dp"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_basic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_movie_poster"
             app:layout_constraintTop_toTopOf="@+id/iv_movie_poster"

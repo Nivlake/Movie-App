@@ -10,8 +10,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView rvMovies;
-    private ArrayList<Movie> listMovies = new ArrayList<>();
+    private final ArrayList<Movie> listMovies = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listMovies.addAll(MoviesData.getMovies());
-        rvMovies = findViewById(R.id.rv_movies);
+        RecyclerView rvMovies = findViewById(R.id.rv_movies);
         rvMovies.setHasFixedSize(true);
         rvMovies.setLayoutManager(new LinearLayoutManager(this));
 
