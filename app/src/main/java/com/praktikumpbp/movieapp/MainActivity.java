@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -21,7 +22,31 @@ public class MainActivity extends AppCompatActivity {
         rvMovies = findViewById(R.id.rv_movies);
         rvMovies.setHasFixedSize(true);
         rvMovies.setLayoutManager(new LinearLayoutManager(this));
-        ListMovieAdapter listMovieAdapter = new ListMovieAdapter(listMovies);
+
+        //BARU Objek ListMovieAdapter lamda
+        ListMovieAdapter listMovieAdapter = new ListMovieAdapter(listMovies, movie -> {
+            Intent intent = new Intent(MainActivity.this,MovieDetail.class);
+
+            intent.putExtra("POSTER",movie.getPosterImage());
+            intent.putExtra("NAMA_FILM",movie.getTitle());
+            intent.putExtra("DESKRIPSI",movie.getDescription());
+
+            startActivity(intent);
+        });
+
+        //LAMA Objek ListMovieAdapter tanpa lamda
+//        ListMovieAdapter listMovieAdapter = new ListMovieAdapter(listMovies, new ListMovieAdapter.ItemClickListener() {
+//            @Override
+//            public void onItemClick(Movie movie) {
+//                Intent intent = new Intent(MainActivity.this,MovieDetail.class);
+//
+//                intent.putExtra("POSTER",movie.getPosterImage());
+//                intent.putExtra("NAMA_FILM",movie.getTitle());
+//                intent.putExtra("DESKRIPSI",movie.getDescription());
+//
+//                startActivity(intent);
+//            }
+//        });
         rvMovies.setAdapter(listMovieAdapter);
     }
 }

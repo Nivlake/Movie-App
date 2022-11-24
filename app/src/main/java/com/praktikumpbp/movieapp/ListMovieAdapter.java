@@ -18,7 +18,7 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.List
     private ArrayList<Movie> listMovies;
     private ItemClickListener itemClickListener;
 
-    public ListMovieAdapter(ArrayList<Movie> list) {
+    public ListMovieAdapter(ArrayList<Movie> list, ItemClickListener itemClickListener) {
         this.listMovies = list;
         //BARU
         this.itemClickListener = itemClickListener;
@@ -42,7 +42,7 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.List
         holder.tvMovieTitle.setText(movie.getTitle());
         holder.tvMovieDescription.setText(movie.getDescription());
 
-        //BARU itemView lamda
+        //BARU itemView lamda >///<
         holder.itemView.setOnClickListener(view -> {
             itemClickListener.onItemClick(listMovies.get(position));
             Toast.makeText(holder.itemView.getContext(),
