@@ -63,7 +63,7 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.List
     public int getItemCount() {
         return listMovies.size();
     }
-
+    //Baru Method ItmClickListener
     public interface ItemClickListener{
         void onItemClick(Movie movie);
     }

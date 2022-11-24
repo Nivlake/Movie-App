@@ -8,40 +8,39 @@
     android:paddingHorizontal="24dp"
     tools:context=".MovieDetail">
 
-    <LinearLayout
-        android:id="@+id/linear2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="80dp"
+
+    <ImageView
+        android:id="@+id/Poster"
+        android:layout_width="128dp"
+        android:layout_height="180dp"
+        android:contentDescription="Movie Poster"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-        <ImageView
-            android:id="@+id/Poster"
-            android:layout_width="128dp"
-            android:layout_height="180dp"
-            android:contentDescription="Movie Poster"
-            android:scaleType="centerCrop"
-            tools:src="@drawable/black_panther"/>
-    </LinearLayout>
+        tools:src="@drawable/black_panther" />
+
     <TextView
         android:id="@+id/Title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Black Panther: Wakanda Forever"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_marginStart="4dp"
+
         android:gravity="center_horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/linear2"
-        app:layout_constraintStart_toStartOf="@+id/linear2"/>
+        app:layout_constraintStart_toEndOf="@+id/Poster"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Black Panther: Wakanda Forever" />
+
     <TextView
         android:id="@+id/Description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:justificationMode="inter_word"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Poster"
         tools:text="The people of Wakanda fight to protect their home from intervening world powers as they mourn the death of King T'Challa.
         \nQueen Ramonda, Shuri, M'Baku, Okoye and the Dora Milaje fight to protect the kingdom of Wakanda from intervening world powers in the wake of King T'Challa's death.
         \nAs the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for their nation.
-        \nAt the dawn of King T'Challa's death, invading forces from around the world target Wakanda's vibranium, unleashing chaos, and it will be the duty of Shuri, M'Baku, Nakia and Okoye to defend the nation, especially when a mysterious Mexican civilization emerges from the depths of the sea."
-        app:layout_constraintTop_toBottomOf="@+id/Title"
-        app:layout_constraintStart_toStartOf="@+id/Title"/>
+        \nAt the dawn of King T'Challa's death, invading forces from around the world target Wakanda's vibranium, unleashing chaos, and it will be the duty of Shuri, M'Baku, Nakia and Okoye to defend the nation, especially when a mysterious Mexican civilization emerges from the depths of the sea." />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
